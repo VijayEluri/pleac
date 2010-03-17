@@ -1,0 +1,9 @@
+*.swp
+.hg/*
+.svn/*
+target/*
+classes/*
+test-classes/*
+*.class
+*.pyc
+.DS_Store
