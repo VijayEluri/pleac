@@ -1,0 +1,44 @@
+// ^^PLEAC^^_6.1
+// -----------------------------
+String dst = src.replaceFirst("this", "that");
+// -----------------------------
+// TODO perl -> ($dst = $src) =~ s/this/that/;
+String dst = src.replaceFirst("this", "that");
+// -----------------------------
+// strip to basename
+String self = Class.class.getResource(String.format("/%s.class",
+    new Exception().getStackTrace()[0].getClassName().replaceAll("[.]", "/"))).getFile();
+String progname = self.replaceFirst(String.format("^.*%c", File.separatorChar), "");
+// Make All Words Title-Cased
+Matcher m = Pattern.compile("(\\w+)").matcher(word);
+StringBuffer cap = new StringBuffer();
+while (m.find()) {
+  String w = m.group(1);
+  m.appendReplacement(cap, String.format("%S%s",w.substring(0,1),w.substring(1).toLowerCase()));
+}
+m.appendTail(cap);
+String capword = cap.toString();
+// /usr/man/man3/foo.1 changes to /usr/man/cat3/foo.1
+String catpage = manpage.replaceFirst("man(?=\\d)", "cat");
+// -----------------------------
+String[] bindirs = {"/usr/bin","/bin","/usr/local/bin"};
+String[] libdirs = new String[bindirs.length];
+int i = 0;
+for (String dir : bindirs) {
+  libdirs[i++] = dir.replaceFirst("bin","lib");
+}
+System.out.format("%s\n",Arrays.asList(libdirs));
+// /usr/lib /lib /usr/local/lib
+// -----------------------------
+String a = b.replaceAll("X","y");   // store changes to b in a
+// change b, count goes in a
+Matcher m = Pattern.compile("X").matcher(b);
+int a = 0;
+StringBuffer c = new StringBuffer();
+while (m.find()) {
+  String w = m.group();
+  m.appendReplacement(c, "y");
+  ++a;
+}
+m.appendTail(c);
+b = c.toString();

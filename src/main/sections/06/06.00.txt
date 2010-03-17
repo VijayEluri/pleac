@@ -1,0 +1,77 @@
+// ^^PLEAC^^_6.0
+// Following imports are assumed throughout this section.
+// This requires Java 1.4 or newer.
+import java.util.*;
+import java.util.regex.*;
+// -----------------------------
+Matcher match = Pattern.compile(pattern).matcher(string);
+string.replaceFirst(pattern, replacement);
+// -----------------------------
+Pattern.compile("sheep").matcher(meadow).find(); // True if meadow contains "sheep"
+  !Pattern.compile("sheep").matcher(meadow).find(); // True if meadow doesn't contain "sheep"
+meadow.replaceFirst("old", "new"); // Replace "old" with "new" in meadow
+// -----------------------------
+// Fine bovines demand fine toreadors.
+// Muskoxen are a polar ovibovine species.
+// Grooviness went out of fashion decades ago.
+// -----------------------------
+// Ovines are found typically in oviaries.
+// -----------------------------
+if (Pattern.compile("bovines?\\b", Pattern.CASE_INSENSITIVE).matcher(meadow).find()) {
+  System.out.print("Here be sheep!");
+}
+// -----------------------------
+String string = "good food";
+string = string.replaceFirst("o*", "e");
+// -----------------------------
+// good food
+//
+// geod food
+//
+// geed food
+//
+// geed feed
+//
+// ged food
+//
+// ged fed
+//
+// egood food
+// -----------------------------
+Matcher m = Pattern.compile("(\\d+)").matcher(_);
+while (m.find()) {
+  System.out.format("Found number %s\n", m.group(1));
+}
+// -----------------------------
+Matcher m = Pattern.compile("(\\d+)").matcher(_);
+List<Integer> n = new ArrayList<Integer>();
+while (m.find()) {
+  n.add(Integer.parseInt(m.group(1)));
+}
+Integer[] numbers = n.toArray(new Integer[0]);
+// -----------------------------
+// This is a utility method used in the following example:
+public static List<String> toList (final Matcher m) {
+  final List<String> t = new ArrayList<String>();
+  while (m.find()) {
+    t.add(m.group(1));
+  }
+  return t;
+}
+String digits = "123456789";
+List<String> nonlap = toList(Pattern.compile("(\\d\\d\\d)").matcher(digits));
+List<String> yeslap = toList(Pattern.compile("(?=(\\d\\d\\d))").matcher(digits));
+System.out.format("Non-overlapping:  %s\n", nonlap);
+System.out.format("Overlapping:      %s\n", yeslap);
+// Non-overlapping: 123 456 789
+// Overlapping: 123 234 345 456 567 678 789
+// -----------------------------
+String string = "And little lambs eat ivy";
+Matcher m = Pattern.compile("l[^s]*s").matcher(string);
+m.find();
+MatchResult ms = m.toMatchResult(); // Requires Java 1.5 or newer.
+System.out.format("(%s) (%s) (%s)\n",
+    string.substring(0, ms.start()), // $`
+    m.group(),                       // $&
+    string.substring(ms.end()));     // $'
+// (And ) (little lambs) ( eat ivy)
