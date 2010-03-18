@@ -3,5 +3,6 @@
 <stringAttribute key="org.eclipse.debug.core.ATTR_REFRESH_SCOPE" value="${project}"/>
 <stringAttribute key="org.eclipse.ui.externaltools.ATTR_LAUNCH_CONFIGURATION_BUILD_SCOPE" value="${project}"/>
 <stringAttribute key="org.eclipse.ui.externaltools.ATTR_LOCATION" value="${project_loc}/pleac.sh"/>
+<stringAttribute key="org.eclipse.ui.externaltools.ATTR_TOOL_ARGUMENTS" value="&quot;${selected_resource_name}&quot;"/>
 <stringAttribute key="org.eclipse.ui.externaltools.ATTR_WORKING_DIRECTORY" value="${project_loc}"/>
 </launchConfiguration>
