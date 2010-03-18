@@ -1,6 +1,7 @@
 *.swp
 .hg/*
 .svn/*
+.manager/*
 target/*
 classes/*
 test-classes/*
