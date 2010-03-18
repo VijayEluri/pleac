@@ -400,7 +400,7 @@ package org.nicerobot.pleac;
 // TODO $big = "\U$little";             # "bo peep" -> "BO PEEP"
 // TODO $little = "\L$big";             # "JOHN"    -> "john"
 //-----------------------------
-// TODO $big = "\u$little";             # "bo"      -> "Bo"
+// TODO $big = "\\u$little";             # "bo"      -> "Bo"
 // TODO $little = "\l$big";             # "BoPeep"    -> "boPeep" 
 //-----------------------------
 // TODO use locale;                     # needed in 5.004 or above
@@ -408,7 +408,7 @@ package org.nicerobot.pleac;
 // TODO $beast   = "dromedary";
 // capitalize various parts of $beast
 // TODO $capit   = ucfirst($beast);         # Dromedary
-// TODO $capit   = "\u\L$beast";            # (same)
+// TODO $capit   = "\\u\L$beast";            # (same)
 // TODO $capall  = uc($beast);              # DROMEDARY
 // TODO $capall  = "\U$beast";              # (same)
 // TODO $caprest = lcfirst(uc($beast));     # dROMEDARY
@@ -416,7 +416,7 @@ package org.nicerobot.pleac;
 //-----------------------------
 // capitalize each word's first character, downcase the rest
 // TODO $text = "thIS is a loNG liNE";
-// TODO $text =~ s/(\w+)/\u\L$1/g;
+// TODO $text =~ s/(\w+)/\\u\L$1/g;
 // TODO print $text;
 // TODO This Is A Long Line
 //-----------------------------

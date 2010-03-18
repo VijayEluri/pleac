@@ -79,7 +79,7 @@ package org.nicerobot.pleac;
 // TODO ($progname = $0)        =~ s!^.*/!!;
 
 // Make All Words Title-Cased
-// TODO ($capword  = $word)     =~ s/(\w+)/\u\L$1/g;
+// TODO ($capword  = $word)     =~ s/(\w+)/\\u\L$1/g;
 
 // /usr/man/man3/foo.1 changes to /usr/man/cat3/foo.1
 // TODO ($catpage  = $manpage)  =~ s/man(?=\d)/cat/;
@@ -151,13 +151,13 @@ package org.nicerobot.pleac;
 // TODO   \#                #   a pound sign
 // TODO   (\w+)             #   the variable name
 // TODO   \#                #   another pound sign
-/${$1}/xg;          # with the value of the global variable
+// TODO /${$1}/xg;          # with the value of the global variable
 //#-----------------------------
 // TODO s/                  # replace
 // TODO \#                  #   a pound sign
 // TODO (\w+)               #   the variable name
 // TODO \#                  #   another pound sign
-/'$' . $1/xeeg;     # ' with the value of *any* variable
+// TODO /'$' . $1/xeeg;     # ' with the value of *any* variable
 //-----------------------------
 
 // ^^PLEAC^^_6.5
@@ -174,7 +174,7 @@ package org.nicerobot.pleac;
 // TODO }
 // The third fish is a red one.
 //-----------------------------
-/(?:\w+\s+fish\s+){2}(\w+)\s+fish/i;
+// TODO /(?:\w+\s+fish\s+){2}(\w+)\s+fish/i;
 //-----------------------------
 // simple way with while loop
 // TODO $count = 0;
@@ -503,7 +503,7 @@ package org.nicerobot.pleac;
 //-----------------------------
 // TODO m{ <b><i>(.*?)</i></b> }sx
 //-----------------------------
-/BEGIN((?:(?!BEGIN).)*)END/
+// TODO /BEGIN((?:(?!BEGIN).)*)END/
 //-----------------------------
 // TODO m{ <b><i>(  (?: (?!</b>|</i>). )*  ) </i></b> }sx
 //-----------------------------
@@ -552,7 +552,7 @@ package org.nicerobot.pleac;
 // TODO }
 // TODO body overlaps in no-body-snatcher
 //-----------------------------
-/^(\w+?)(\w+) \2(\w+)$/, 
+// TODO ^(\w+?)(\w+) \2(\w+)$/, 
 //-----------------------------
 // ^^INCLUDE^^ include/perl/ch06/prime-pattern
 //-----------------------------
@@ -582,15 +582,15 @@ package org.nicerobot.pleac;
 // TODO chomp($pattern = <CONFIG_FH>);
 // TODO if ( $data =~ /$pattern/ ) { ..... }
 //-----------------------------
-/ALPHA|BETA/;
+// TODO /ALPHA|BETA/;
 //-----------------------------
-/^(?=.*ALPHA)(?=.*BETA)/s;
+// TODO /^(?=.*ALPHA)(?=.*BETA)/s;
 //-----------------------------
-/ALPHA.*BETA|BETA.*ALPHA/s;
+// TODO /ALPHA.*BETA|BETA.*ALPHA/s;
 //-----------------------------
-/^(?:(?!PAT).)*$/s;
+// TODO /^(?:(?!PAT).)*$/s;
 //-----------------------------
-/(?=^(?:(?!BAD).)*$)GOOD/s;
+// TODO /(?=^(?:(?!BAD).)*$)GOOD/s;
 //-----------------------------
 // TODO if (!($string =~ /pattern/)) { something() }   # ugly
 // TODO if (  $string !~ /pattern/)  { something() }   # preferred
@@ -701,11 +701,11 @@ package org.nicerobot.pleac;
 // TODO   | [\xA1-\xFE][\xA1-\xFE]     # JIS X 0208:1997 (two bytes/char)
 // TODO };
 //-----------------------------
-/^ (?: $eucjp )*?  \xC5\xEC\xB5\xFE/ox # Trying to find Tokyo
+// TODO /^ (?: $eucjp )*?  \xC5\xEC\xB5\xFE/ox # Trying to find Tokyo
 //-----------------------------
-/^ (  (?:eucjp)*? ) $Tokyo/$1$Osaka/ox
+// TODO /^ (  (?:eucjp)*? ) $Tokyo/$1$Osaka/ox
 //-----------------------------
-/\G (  (?:eucjp)*? ) $Tokyo/$1$Osaka/gox
+// TODO /\G (  (?:eucjp)*? ) $Tokyo/$1$Osaka/gox
 //-----------------------------
 // TODO @chars = /$eucjp/gox; # One character per list element
 //-----------------------------

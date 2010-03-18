@@ -190,7 +190,7 @@ package org.nicerobot.pleac;
 // TODO         /\S+(\s+\S+)+/      || carp "prefer multiword name";
 // TODO         /\S/                || carp "name is blank";
 // TODO     } 
-// TODO     s/(\w+)/\u\L$1/g;       # enforce capitalization
+// TODO     s/(\w+)/\\u\L$1/g;       # enforce capitalization
 // TODO     $self->{NAME} = $_;
 // TODO } 
 //-----------------------------

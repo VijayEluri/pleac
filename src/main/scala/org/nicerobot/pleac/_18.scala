@@ -320,7 +320,7 @@ package org.nicerobot.pleac;
 // TODO (undef, $process_string) = $t->waitfor('/\d+ processes/');
 // TODO $t->close;
 //-----------------------------
-/[\$%#>] $/
+// TODO /[\$%#>] $/
 //-----------------------------
 // TODO $telnet = Net::Telnet->new( Errmode => sub { main::log(@_) }, ... );
 //-----------------------------
