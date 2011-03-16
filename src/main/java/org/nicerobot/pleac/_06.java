@@ -76,7 +76,7 @@ public class _06 {
       // -----------------------------
       // Ovines are found typically in oviaries.
       // -----------------------------
-      if (Pattern.compile("bovines?\\b", Pattern.CASE_INSENSITIVE).matcher(meadow).find()) {
+      if (Pattern.compile("\\bovines?\\b", Pattern.CASE_INSENSITIVE).matcher(meadow).find()) {
         System.out.print("Here be sheep!");
       }
       // </PLEAC>
